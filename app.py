@@ -68,15 +68,14 @@ def delete_restaurant(restaurant_id):
 def show_menu(restaurant_id):
     restaurant = session.query(Restaurant).filter_by(id=restaurant_id).first()
     items = session.query(MenuItem).filter_by(restaurant_id=restaurant_id)
-    return render_template('menu.html', items=items, restaurant=restaurant)
+    return render_template('menu.html',items=items,restaurant=restaurant)
 
 
 @app.route('/restaurant/<int:restaurant_id>/menu/new/',
            methods=['GET', 'POST'])
 def new_menu_item(restaurant_id):
     if request.method == 'POST':
-        new_item = MenuItem(
-            name=request.form['item-name'], restaurant_id=restaurant_id)
+        new_item = MenuItem(name=request.form['item-name'],restaurant_id=restaurant_id)
         session.add(new_item)
         session.commit()
         flash("New menu item created")
