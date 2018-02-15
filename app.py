@@ -75,7 +75,7 @@ def show_menu(restaurant_id):
            methods=['GET', 'POST'])
 def new_menu_item(restaurant_id):
     if request.method == 'POST':
-        new_item = MenuItem(name=request.form['item-name'],restaurant_id=restaurant_id)
+        new_item = MenuItem(name=request.form['item-name'],description=request.form['description'],price=request.form['price'],restaurant_id=restaurant_id)
         session.add(new_item)
         session.commit()
         flash("New menu item created")
@@ -90,6 +90,8 @@ def edit_menu_item(restaurant_id, menu_id):
     edit_item = session.query(MenuItem).filter_by(id=menu_id).first()
     if request.method == 'POST':
         edit_item.name = request.form['item-name']
+        edit_item.description = request.form['description']
+        edit_item.price = request.form['price']
         session.add(edit_item)
         session.commit()
         flash("Menu item successfully edited")
