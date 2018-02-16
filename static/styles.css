@@ -35,10 +35,9 @@ a {
     border: 2px solid;
     border-color: #999999;
     border-radius: 25px;
-    left: 25%;
-    margin: 5px;
-    padding: 5px;
-    position: fixed;
+    left: 9%;
+    margin: -2px;
+    padding: 21px;
 }
 
 .header {
