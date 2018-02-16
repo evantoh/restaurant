@@ -26,8 +26,8 @@ p, dd, dt {
 
 a {
     color: #FFFFCC;
-    font-size: 0.75em;
-    text-decoration: none;
+    font-size: 11.75em;
+    text-decoration: wavy;
 }
 
 .pane {
@@ -52,7 +52,7 @@ a {
 }
 
 .price {
-    float: right;
+    /* float: right; */
     text-align: right;
     width: 50%;
 }

@@ -90,8 +90,8 @@ def edit_menu_item(restaurant_id, menu_id):
     edit_item = session.query(MenuItem).filter_by(id=menu_id).first()
     if request.method == 'POST':
         edit_item.name = request.form['item-name']
-        edit_item.description = request.form['description']
-        edit_item.price = request.form['price']
+        # edit_item.description = request.form['description']
+        # edit_item.price = request.form['price']
         session.add(edit_item)
         session.commit()
         flash("Menu item successfully edited")

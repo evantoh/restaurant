@@ -2,6 +2,20 @@
     <head>
         <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
     </head>
+    <style>
+            .pane {
+                background-color: #333333;
+                border: 6px solid;
+                border-color: #999999;
+                border-radius: 46px;
+                left: 0%;
+                margin: -5px;
+                padding: 134px;
+                position: relative;
+        
+            
+
+    </style>
     <body>
         <div class="pane">
             <div class="header">
@@ -9,7 +23,7 @@
             </div>
             <br>
             <hr>
-            <div class="well">
+            <div>
                 <a href="{{ url_for('new_restaurant') }}">Create New Restaurant</a>
             </div>
             
